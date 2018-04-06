@@ -7,9 +7,9 @@ x = 2
 y = 3
 add_op = tf.add(x, y)
 mul_op = tf.multiply(x, y)
-useless = tf.multiply(x, add_op)
-pow_op = tf.pow(add_op, mul_op)
+output_1 = tf.multiply(x, add_op)
+output_2 = tf.pow(add_op, mul_op)
 with tf.Session() as sess:
-  z, useful = sess.run([pow_op, useless])
-print(z, useful)
+  output_1, output_2 = sess.run([output_1, output_2])
+print(output_1, output_2)
 
