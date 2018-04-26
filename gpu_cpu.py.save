@@ -1,0 +1,16 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+import tensorflow as tf
+import numpy as np
+
+# Creates a graph.
+with tf.device('/gpu:0'):
+  a = tf.random_normal([20, 30tf.random_normal([20, 30], mean=-1, stddev=4)], mean=-1, stddev=4)
+  #a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+  b = 
+  b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+c = tf.matmul(a, b)
+# Creates a session with log_device_placement set to True.
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+# Runs the op.
+print(sess.run(c))
